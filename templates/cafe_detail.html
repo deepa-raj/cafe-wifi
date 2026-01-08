@@ -1,0 +1,76 @@
+{% extends 'base.html' %}
+{% block title %}{{ cafe.name }}{% endblock %}
+
+{% block head %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/cafe_detail.css') }}">
+{% endblock %}
+
+{% block content %}
+<div class="cafe-detail-container">
+    <div class="cafe-image-container">
+        <div class="cafe-image" style="background-image: url('{{ cafe.img_url }}');"></div>
+        <div class="cafe-info">
+            <div class="cafe-name">{{ cafe.name }}</div>
+            <div class="divider-vertical"></div>
+            <div class="location-info">
+                <div class="location-name"><a class="location-name" href='{{ cafe.map_url }}'> {{ cafe.location }} </a></div>
+                <div class="location-icon" style="background-image: url('{{ url_for('static', filename='images/Location.svg') }}');" onclick="window.location.href='{{ cafe.map_url }}'">
+                    <div class="location-icon-bg"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="availability-container">
+        <div class="availability-info">
+            <div class="availability-title">Availability</div>
+            {% if cafe.has_wifi %}
+            <div class="availability-item">
+                <div class="new-wifi-icon" style="background-image: url('{{ url_for('static', filename='images/new-wifi.svg') }}');">
+<!--                    <div class="wifi-icon" style="background-image: url('{{ url_for('static', filename='images/Wifi.svg') }}');"></div>-->
+                </div>
+                <div class="availability-text">Wi-fi</div>
+            </div>
+            {% endif %}
+            {% if cafe.has_sockets %}
+            <div class="availability-item">
+                <div class="new-plug-icon" style="background-image: url('{{ url_for('static', filename='images/new-plug.svg') }}');"></div>
+                <div class="availability-text">Socket</div>
+            </div>
+            {% endif %}
+            {% if cafe.has_toilet %}
+            <div class="availability-item">
+                <div class="sanitary-icon" style="background-image: url('{{ url_for('static', filename='images/Sanitary.svg') }}');"></div>
+                <div class="availability-text">Toilet</div>
+            </div>
+            {% endif %}
+            {% if cafe.can_take_calls %}
+            <div class="availability-item">
+                <div class="phone-icon" style="background-image: url('{{ url_for('static', filename='images/Phone.svg') }}');"></div>
+                <div class="availability-text">Can take calls</div>
+            </div>
+            {% endif %}
+            <div class="availability-item">
+                <div class="seats-icon" style="background-image: url('{{ url_for('static', filename='images/seat.svg') }}');"></div>
+                <div class="availability-text">Seats: {{ cafe.seats }}</div>
+            </div>
+            <div class="availability-item">
+                <div class="dollar-icon" style="background-image: url('{{ url_for('static', filename='images/Dollar.svg') }}');"></div>
+                <div class="availability-text">Price: {{ cafe.coffee_price }}</div>
+            </div>
+        </div>
+        <div class="availability-info">
+            <div class="any-changes">Any changes?</div>
+            <div class="update-button" onclick="window.location.href='{% if current_user.is_authenticated %}{{ url_for('edit_cafe', cafe_id=cafe.id) }}{% else %}{{ url_for('login') }}{% endif %}'">
+                <div class="update-text">Update</div>
+            </div>
+
+            <form action="{{ url_for('delete_cafe', cafe_id=cafe.id) }}" method="post" style="margin-top: 20px;">
+                {{ csrf_form.hidden_tag() }}
+                <button type="submit" class="delete-button">Delete Cafe</button>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+{% endblock %}
