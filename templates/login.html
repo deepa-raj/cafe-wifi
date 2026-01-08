@@ -1,0 +1,38 @@
+
+{% extends 'base.html' %}
+{% block title %}Login{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-inner-container">
+        <form action="{{ url_for('login') }}" method="POST" class="login-form-container">
+            {{ form.hidden_tag() }}
+            {% if errors %}
+                <div class="error-messages">
+                    {% for error in errors %}
+                        <p>{{ error }}</p>
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="email-form-group">
+                {{ form.email.label }}
+                {{ form.email(class="form-control", placeholder="Your email") }}
+            </div>
+            <div class="password-form-group">
+                {{ form.password.label }}
+                {{ form.password(class="form-control", placeholder="Your password") }}
+            </div>
+            <div class="login-submit-container">
+                {{ form.submit(class="login-submit-button") }}
+            </div>
+            <div class="login-register-container">
+                <p>Haven’t registered yet?</p>
+                <button type="button" class="login-register-button" onclick="window.location.href='/register'">Register</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    document.getElementById('email').focus();
+</script>
+{% endblock %}
