@@ -1,0 +1,43 @@
+{% extends 'base.html' %}
+{% block title %}Register{% endblock %}
+
+{% block content %}
+<div class="login-container">
+    <div class="login-inner-container">
+        <form action="{{ url_for('register') }}" method="POST" class="login-form-container">
+            {{ form.hidden_tag() }}
+            {% if form.errors %}
+                <div class="error-messages">
+                    {% for field, errors in form.errors.items() %}
+                        {% for error in errors %}
+                            <p>{{ error }}</p>
+                        {% endfor %}
+                    {% endfor %}
+                </div>
+            {% endif %}
+            <div class="email-form-group">
+                <label for="email">Email</label>
+                {{ form.email(size=32, class_='form-control', id='email', placeholder='eg: john@email.com') }}
+            </div>
+            <div class="password-form-group">
+                <label for="password">Password</label>
+                {{ form.password(class_='form-control', id='password', placeholder='Your password') }}
+            </div>
+            <div class="password-form-group">
+                <label for="confirm-password">Confirm Password</label>
+                {{ form.confirm_password(class_='form-control', id='confirm-password', placeholder='Confirm your password') }}
+            </div>
+            <div class="login-submit-container">
+                {{ form.submit(class="login-submit-button") }}
+            </div>
+            <div class="login-register-container">
+                <p>Already registered?</p>
+                <button type="button" class="login-register-button" onclick="window.location.href='/login'">Login</button>
+            </div>
+        </form>
+    </div>
+</div>
+<script>
+    document.getElementById('email').focus();
+</script>
+{% endblock %}
