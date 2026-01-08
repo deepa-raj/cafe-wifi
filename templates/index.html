@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+{% block title %}Coffee and Wifi{% endblock %}
+
+{%block content%}
+
+<div class="content">
+    <div class="heading-container">
+        <h1 class="heading-text">CAFE-ROOM</h1>
+        <h3 class="subheading-text">Discover and Manage Your Favorite Cafes with Ease</h3>
+
+    </div>
+    {% for cafe in cafes %}
+    <div class="card">
+        <div class="card-image" style="background-image: url('{{cafe.img_url}}');">
+        </div>
+        <div class="card-content">
+            <div class="card-title">
+                <div class="card-name">{{ cafe.name }}</div>
+                <a href="{{ url_for('cafe_detail', cafe_id=cafe.id) }}" class="show-more">Show more</a>
+<!--                <div class="show-more">  Show more</div>-->
+            </div>
+            <div class="icons">
+                <div class="card-icons">
+                    {% if cafe.has_wifi %}
+                    <div class="wifi-icon" style="background-image: url('{{ url_for('static', filename='images/Wifi.svg') }}');"></div>
+                    {% endif %}
+
+                    {% if cafe.has_toilet %}
+                    <div class="toilet-icon" style="background-image: url('{{ url_for('static', filename='images/plug.svg') }}');"></div>
+                    {% endif %}
+
+                    {% if cafe.has_sockets %}
+                    <div class="plug-icon" style="background-image: url('{{ url_for('static', filename='images/Toilet.svg') }}');"></div>
+                    {% endif %}
+                </div>
+                <a class="loc-icon" href="{{ cafe.map_url }}" style="background-image: url('{{ url_for('static', filename='images/Location.svg') }}');"></a>
+            </div>
+            <div class="divider"></div>
+        </div>
+    </div>
+    {%endfor%}
+</div>
+
+{% endblock %}
