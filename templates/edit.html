@@ -1,0 +1,92 @@
+
+{% extends 'base.html' %}
+{% block title %}Edit Cafe{% endblock %}
+
+{% block content %}
+<div class="edit-outer-container">
+    <h1>Edit Cafe</h1>
+<div class="edit-inner-container">
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        <div class="form-element-container">
+            {{ form.name.label (class_="form-label")}}<br>
+            {{ form.name(class="form-control") }}<br>
+            {% for error in form.name.errors %}
+                <span class="error">{{ error }}</span><br>
+            {% endfor %}
+        </div>
+        <div class="form-element-container">
+            {{ form.map_url.label (class_="form-label")}}<br>
+            {{ form.map_url(class="form-control") }}<br>
+            {% for error in form.map_url.errors %}
+                <span class="error">{{ error }}</span><br>
+            {% endfor %}
+        </div>
+        <div class="form-element-container">
+            {{ form.img_url.label (class_="form-label")}}<br>
+            {{ form.img_url(class="form-control") }}<br>
+            {% for error in form.img_url.errors %}
+                <span class="error">{{ error }}</span><br>
+            {% endfor %}
+        </div>
+        <div class="form-element-container">
+            {{ form.location.label (class_="form-label")}}<br>
+            {{ form.location(class="form-control") }}<br>
+            {% for error in form.location.errors %}
+                <span class="error">{{ error }}</span><br>
+            {% endfor %}
+        </div>
+
+
+
+        <div class="form-element-container">
+                <div class="checkbox-container">
+                    {{ form.has_sockets.label(class_="form-label") }}
+                    <input type="checkbox" id="has_sockets" name="has_sockets" {{ 'checked' if form.has_sockets.data else '' }}>
+                    <label for="has_sockets" class="custom-checkbox"></label>
+<!--                    <span class="custom-checkbox-label">Sockets</span>-->
+                </div>
+            </div>
+            <div class="form-element-container">
+                <div class="checkbox-container">
+                    {{ form.has_toilet.label(class_="form-label") }}
+                    <input type="checkbox" id="has_toilet" name="has_toilet" {{ 'checked' if form.has_toilet.data else '' }}>
+                    <label for="has_toilet" class="custom-checkbox"></label>
+<!--                    <span class="custom-checkbox-label">Toilet</span>-->
+                </div>
+            </div>
+            <div class="form-element-container">
+                <div class="checkbox-container">
+                    {{ form.has_wifi.label(class_="form-label") }}
+                    <input type="checkbox" id="has_wifi" name="has_wifi" {{ 'checked' if form.has_wifi.data else '' }}>
+                    <label for="has_wifi" class="custom-checkbox"></label>
+<!--                    <span class="custom-checkbox-label">Wi-fi</span>-->
+                </div>
+            </div>
+            <div class="form-element-container">
+                <div class="checkbox-container">
+                    {{ form.can_take_calls.label(class_="form-label") }}
+                    <input type="checkbox" id="can_take_calls" name="can_take_calls" {{ 'checked' if form.can_take_calls.data else '' }}>
+                    <label for="can_take_calls" class="custom-checkbox"></label>
+<!--                    <span class="custom-checkbox-label">Can Take Calls</span>-->
+                </div>
+            </div>
+
+
+        <div class="form-element-container">
+            {{ form.seats.label (class_="form-label")}}
+            {{ form.seats(class="form-control") }}
+        </div>
+        <div class="form-element-container">
+            {{ form.coffee_price.label (class_="form-label")}}<br>
+            {{ form.coffee_price(class="form-control") }}<br>
+        </div>
+        <div class="login-register-container">
+            {{ form.submit(class="login-register-button") }}
+        </div>
+    </form>
+</div>
+</div>
+
+
+{% endblock %}
