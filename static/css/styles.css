@@ -1,0 +1,840 @@
+
+body {
+    margin: 0;
+    font-family: 'Inter', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    box-sizing: border-box;
+    overflow-x: hidden;
+}
+
+.outer-container {
+    width: 100%;
+    height: 60px;
+    /* padding-bottom: 944px; */
+    background: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+
+.inner-container {
+    flex: 1 1 0;
+    align-self: stretch;
+    padding: 23px 50px;
+    background: #D9D9D9;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10px;
+}
+
+
+.nav-container {
+    width: 100%;
+    /* max-width: 1440px; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: white;
+}
+
+.nav-login-register{
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-login-register:hover{
+    color: #636e72;
+}
+
+.nav-add-cafe{
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    color: black;
+}
+
+.nav-add-cafe:hover{
+    color: #636e72;
+}
+
+.header {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+
+.spacer {
+    flex-grow: 1;
+}
+
+
+.logo {
+    color: black;
+
+}
+
+.logo-attribute {
+    text-decoration: none;
+    color: black;
+    font-size: 24px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 700;
+}
+
+.logo-attribute:hover{
+    color: #636e72;
+}
+
+
+.nav {
+    display: flex;
+    align-items: center;
+    gap: 24px;
+}
+
+
+.nav-item {
+    color: black;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    overflow-wrap: break-word;
+}
+
+
+.content {
+    width: 100%;
+    max-width: 1100px;
+    padding: 50px 110px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 40px;
+}
+
+.heading-container{
+    width:100%;
+    text-align: center;
+    margin-bottom: 30px;
+
+}
+
+.heading-text{
+    font-size: 44px;
+}
+
+.subheading-text{
+
+    font-size: 20px;
+    color: #232323;
+}
+
+
+.card {
+    width: 300px;
+    background: #EEEEEE;
+    box-shadow: 0px 5px 19px rgba(0, 0, 0, 0.15);
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+
+
+.card-image {
+    width: 100%;
+    height: 200px; /* Set the height according to your design */
+    background-size: cover; /* This ensures the image covers the area */
+    background-position: center; /* This centers the image */
+    background-repeat: no-repeat; /* This prevents the image from repeating */
+    border-radius: 8px; /* Optional: Adds rounded corners */
+}
+
+
+.card-content {
+    padding: 14px;
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+}
+
+.card-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.card-name {
+    color: black;
+    font-size: 16px;
+    font-weight: 500;
+    max-width: 60%
+}
+
+
+
+.show-more {
+    padding: 8px;
+    background: #131313;
+    border-radius: 8px;
+    color: #EEEEEE;
+    font-size: 12px;
+    font-weight: 300;
+    text-align: center;
+    text-decoration: none;
+    color: #EEEEEE; /* Change this color to whatever you like */
+    cursor: pointer;
+}
+
+.show-more:hover {
+    background: #636e72; /* Change this color to whatever you like */
+    color: #EEEEEE;
+}
+
+.card-icons {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+}
+
+
+#wifi{
+color: red;
+}
+
+.wifi-icon {
+    width: 22px;
+    height: 22px;
+}
+
+.new-wifi-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.toilet-icon {
+    width: 20px;
+    height: 20px;
+    stroke-color: "red";
+}
+
+
+.plug-icon {
+    width: 20px;
+    height: 20px;
+
+}
+
+.new-plug-icon {
+    width: 26px;
+    height: 26px;
+}
+
+
+.loc-icon {
+    width: 30px;
+    height: 30px;
+
+}
+
+.dollar-icon {
+    width: 26px;
+    height: 26px;
+}
+
+
+.sanitary-icon {
+    width: 26px;
+    height: 26px;
+}
+
+.phone-icon {
+    width: 26px;
+    height: 26px;
+}
+
+
+.seats-icon {
+    width: 26px;
+    height: 26px;
+}
+
+
+.icons {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+
+.divider {
+    height: 1px;
+    background: #b2bec3;
+}
+
+
+
+/*------------------ cafe_detail.html ---------------*/
+
+.cafe-detail-container {
+    width: 100%;
+    height: 100%;
+    background: white;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 0px;
+    display: inline-flex;
+    margin-bottom: 100px;
+}
+
+.cafe-image-container {
+    width: 100%;
+    height: 560px;
+    position: relative;
+}
+
+.cafe-image {
+    width: 100%;
+    height: 500px;
+    left: 0px;
+    top: 0px;
+    position: absolute;
+    background-size: cover;
+    background-position: center;
+}
+
+
+.cafe-info {
+    width: 610px;
+    height: 48px;
+    left: 50px;
+    top: 420px;
+    position: absolute;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    display: inline-flex;
+}
+
+
+.cafe-name {
+    width: 250px;
+    color: #EEEEEE;
+    font-size: 30px;
+    font-family: Inter;
+    font-weight: 800;
+    word-wrap: break-word;
+}
+
+.divider-vertical {
+    width: 30px;
+    height: 0px;
+    transform: rotate(90deg);
+    /* transform-origin: 0 0; */
+    border: 1px #EEEEEE solid;
+}
+
+
+.location-info {
+    flex: 1 1 0;
+    height: 48px;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    display: flex;
+}
+
+.location-name {
+    color: #EEEEEE;
+    font-size: 18px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+    text-decoration: none;
+}
+
+.location-icon {
+    width: 30px;
+    height: 30px;
+    position: relative;
+    cursor: pointer;
+}
+
+.availability-container {
+    width: 620px;
+    justify-content: flex-start;
+    align-items: flex-start;
+    gap: 200px;
+    display: inline-flex;
+}
+
+.availability-info {
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    display: inline-flex;
+}
+
+.availability-title {
+    align-self: stretch;
+    color: black;
+    font-size: 36px;
+    font-family: Inter;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+.any-changes {
+    align-self: stretch;
+    color: black;
+    font-size: 20px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+
+.availability-item {
+    align-self: stretch;
+    height: 33px;
+    justify-content: flex-start;
+    align-items: flex-end;
+    gap: 26px;
+    display: inline-flex;
+}
+
+.availability-icon {
+    width: 32px;
+    height: 33px;
+    position: relative;
+}
+
+.availability-text {
+    color: #2d3436;
+    font-size: 18px;
+    font-family: Inter;
+    font-weight: 400;
+    word-wrap: break-word;
+}
+
+.return-home {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: #131313;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+    cursor: pointer;
+    width: 100%
+}
+
+
+.return-home:hover {
+    background: #636e72; /* Change this color to whatever you like */
+    color: #EEEEEE;
+}
+
+
+.return-home-text {
+    color: #EEEEEE;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+
+.update-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: #131313;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+    cursor: pointer;
+    width: 100%
+}
+
+
+.update-button:hover {
+    background: #636e72; /* Change this color to whatever you like */
+    color: #EEEEEE;
+}
+
+
+.update-text {
+    color: #EEEEEE;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+
+
+
+/* ---------------------------- Login css --------------*/
+
+
+/* Styles for the login page */
+.login-container {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    background: #D9D9D9;
+    /* padding: 20px 250px; */
+    padding-top: 100px;
+}
+
+
+.login-inner-container {
+    width: 400px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+    gap: 50px;
+}
+
+
+.login-form-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    width: 100%;
+}
+
+.email-form-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 78px;
+    width: 100%;
+}
+
+
+.password-form-group {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 40px;
+    width: 100%;
+}
+
+
+.email-form-group label {
+    color: black;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+.password-form-group label {
+    color: black;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+
+.email-form-group input {
+    width: 500px;
+    height: 20px;
+    padding: 12px 10px;
+    background: #EEEEEE;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 800;
+    color: rgba(0, 0, 0, 0.50);
+
+}
+
+.password-form-group input {
+    width: 500px;
+    height: 18px;
+    padding: 10px 10px;
+    background: #EEEEEE;
+    border-radius: 8px;
+    border: none;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    color: rgba(0, 0, 0, 0.50);
+}
+
+
+.login-register-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-register-container p {
+    text-align: center;
+    color: black;
+    font-size: 16px;
+    font-family: Inter, sans-serif;
+    font-weight: 500;
+}
+
+.login-register-button {
+    padding: 12px 20px;
+    background: #131313;
+    border-radius: 8px;
+    color: #EEEEEE;
+    font-size: 14px;
+    font-family: Inter, sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    border: none;
+}
+
+.login-register-button:hover {
+    background: #636e72;
+}
+
+
+.login-submit-container {
+    width: 100%;
+    text-align: center;
+}
+
+.login-submit-button {
+    width: 100%;
+    padding: 12px;
+    background: #131313;
+    color: #EEEEEE;
+    border: none;
+    border-radius: 8px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.login-submit-button:hover {
+    background: #636e72;
+}
+
+
+
+/*-------------------------------------------
+*/
+
+
+.edit-container {
+    width: 400px;
+    margin: auto;
+    margin-top: 40px;
+    background: #EEEEEE;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.form-group {
+    margin-bottom: 15px;
+    width:90%;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+
+.form-label{
+    color: black;
+    margin-bottom: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+
+
+.edit-inner-container{
+    width: 400px;
+    padding:20px;
+    margin-bottom:50px;
+    background-color: #EEEEEE;
+
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.form-element-container{
+    padding-bottom:20px;
+}
+
+
+.form-control {
+    width: 94%;
+    padding: 10px;
+    border: 1px solid #EEE;
+    border-radius: 5px;
+    color: #000000; /* Black color for input text */
+    font-size: 14px; /* Font size for the input text */
+    font-weight: 500px;
+}
+
+.form-check-input {
+    margin-top: 5px;
+}
+
+
+
+
+/* Style for placeholder text */
+.form-control::placeholder {
+    color: #888; /* Gray color for placeholder text */
+    font-size:14px;
+    font-weight: 300px;
+}
+
+
+.error-messages {
+color: red;
+}
+
+
+.form-control[readonly], .form-control[disabled] {
+    background-color: #f5f5f5;
+    cursor: not-allowed;
+}
+
+
+
+
+
+.btn-primary {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #636e72;
+}
+
+
+
+/*------------------ custom chechbox----------*/
+
+
+
+/* Container for custom checkbox and label to align them properly */
+.checkbox-container {
+    display: flex;
+    align-items: start;
+    gap: 20px; /* Adjust this value for desired spacing */
+}
+
+/* Hide the default checkbox */
+input[type="checkbox"] {
+    display: none;
+}
+
+/* Custom checkbox style */
+.custom-checkbox {
+    width: 18px;
+    height: 18px;
+    background-color: #fff;
+    border: 2px solid #ccc;
+    border-radius: 3px;
+    position: relative;
+    cursor: pointer;
+}
+
+/* Checked state */
+input[type="checkbox"]:checked + .custom-checkbox::after {
+    content: '\2713';
+    font-size: 20px;
+    color: #000;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* Hover effect */
+.custom-checkbox:hover {
+    border-color: #666;
+}
+
+/* Adjust the label text */
+.custom-checkbox-label {
+    margin-left: 5px; /* Adjust spacing between checkbox and label text */
+}
+
+
+
+.delete-button {
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    background: #e74c3c;
+    border: 0px;
+    border-radius: 8px;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    display: inline-flex;
+    cursor: pointer;
+    width: 100%;
+    color: #EEEEEE;
+    font-size: 16px;
+    font-family: Inter;
+    font-weight: 500;
+    word-wrap: break-word;
+}
+
+
+.delete-button:hover {
+    background: #c0392b; /* Change this color to whatever you like */
+    color: #EEEEEE;
+}
