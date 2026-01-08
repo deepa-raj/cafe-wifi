@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% block styles %}
+    <link rel="stylesheet"
+          href="{{ url_for('static',filename='css/styles.css')}}"/>
+    {% endblock %}
+
+    <title>{% block title %}{% endblock %}</title>
+</head>
+<body>
+<div class="nav-container">
+    <div class="outer-container">
+        <div class="inner-container">
+            <div class="header">
+                <div class="logo">
+                    <a class="logo-attribute" href="{{ url_for('home') }}">CAFE-ROOM</a></div>
+                <div class="nav">
+                    <div class="nav-item">
+                        <a class="nav-login-register" href="{{ url_for('login') }}">Login/Register</a>
+                    </div>
+                    <div class="nav-item">
+                        <a class="nav-add-cafe" href="{{ url_for('add_cafe') }}">Add Cafe</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% block content %}{% endblock %}
+</div>
+
+</body>
+</html>
